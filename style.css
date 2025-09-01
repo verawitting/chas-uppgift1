@@ -1,0 +1,408 @@
+/* -------------------- VARIABLES & RESET -------------------- */
+:root {
+    --offwhite: #faebd7;
+    --darkblue: #03021c;
+    --pink: #feabd7;
+    --hotpink: rgb(202, 33, 123);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Jost", sans-serif;
+    font-weight: 200;
+}
+
+/* -------------------- BODY -------------------- */
+body {
+    min-height: 100vh; 
+    background-image: url(assets/gradient-grainy-texture_23-2148976749-e1656080022483.webp);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--offwhite);
+}
+
+/* -------------------- TYPOGRAPHY -------------------- */
+h1 {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(112px, 20vw, 112px); /* huge min, grows with viewport */
+    line-height: 0.7;
+}
+
+h2 {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(36px, 12vw, 48px); /* big and bold, grows on larger screens */
+    line-height: 1.1;
+}
+
+h2 .line-break {
+    display: block;
+}
+
+h3 {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(28px, 9vw, 32px);
+    line-height: 1;
+}
+
+h4 {
+    font-family: "Instrument Serif", serif;
+    font-size: clamp(20px, 7vw, 28px);
+    line-height: 1;
+}
+
+h5 {
+    font-weight: 500;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* -------------------- IMAGES & SVG -------------------- */
+svg {
+    height: 56px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* -------------------- LINKS -------------------- */
+a {
+    color: var(--hotpink);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- SECTIONS -------------------- */
+
+section {
+    margin: 48px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    margin: 96px 8px 16px 8px;
+}
+
+.weather-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-weather {
+    max-width: 48px;
+}
+
+.heading-main {
+    padding: 32px 0;
+}
+
+.vera-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 0 40px;
+    gap: 8px;
+}
+
+.profil-picture {
+    border-radius: 50%;
+    border: 1px solid var(--offwhite);
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.vera-text {
+    width: 50%;
+}
+
+/* ---------- HOBBIES ---------- */
+
+/* WAVE ELEMENT */
+.wave {
+    /* setting constants to create circle shape */
+    --size: 40px;
+    --R: calc(var(--size) * 1.28);
+    --phase: 0px;                 /* horizontal shift */
+  
+    height: 150px;
+    background: var(--darkblue);
+  
+    /* Mask (works in Safari/Chromium), positions include our --phase */
+    -webkit-mask:
+      radial-gradient(var(--R) at 50% calc(1.8 * var(--size)), #000 99%, #0000 101%)
+        calc(50% - 2 * var(--size) + var(--phase)) 0 / calc(4 * var(--size)) 100%,
+      radial-gradient(var(--R) at 50% calc(-.8 * var(--size)), #0000 99%, #000 101%)
+        calc(50% + var(--phase)) var(--size) / calc(4 * var(--size)) 100% repeat-x;
+  
+    /* Firefox support */
+    mask:
+      radial-gradient(var(--R) at 50% calc(1.8 * var(--size)), #000 99%, #0000 101%)
+        calc(50% - 2 * var(--size) + var(--phase)) 0 / calc(4 * var(--size)) 100%,
+      radial-gradient(var(--R) at 50% calc(-.8 * var(--size)), #0000 99%, #000 101%)
+        calc(50% + var(--phase)) var(--size) / calc(4 * var(--size)) 100% repeat-x;
+}
+  
+/* Top wave: no phase shift */
+.wave-top {
+    --phase: 0px;
+}
+  
+/* Bottom wave: flipped + shifted by half wavelength */
+.wave-bottom {
+    transform: rotate(180deg);
+    transform-origin: center;
+    --phase: calc(2 * var(--size));   /* half the tile width */
+}
+
+.hobbies {
+    margin: 0;    
+    gap: 0px;
+    color: var(--pink);
+}
+
+.hobbies-wrapper {
+    background-color: var(--darkblue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+ul {
+    margin: 8px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* ---------- EXPERIENCE ----------  */
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.exp-card {
+    padding: 16px 8px 24px;
+    border: 1px solid;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.exp-card:hover {
+    background-color: rgba(3, 2, 28, 0.8);
+    transform: scale(1.02);
+}
+
+.year-icon-wrapper {
+    padding-top: 8px;
+    flex: 0 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-exp {
+    width: 48px;
+    height: 48px;
+}
+
+.exp-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ----- toggle descriptions ----- */
+.exp-card-text p {
+    display: none;
+}
+
+.exp-card-text p.show {
+    display: block;
+}
+
+.btn-show-more {
+    align-self: flex-end;
+    margin-right: 8px;
+    color: var(--offwhite);
+    font-weight: 500;
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    position: relative;
+    background-color: transparent;
+    transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.6;
+}
+  
+.btn-show-more::after {
+    content: '';
+    border-bottom: 3px solid var(--offwhite);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    margin-top: -5px;
+    top: 0;
+    left: 15px;
+    visibility: hidden;
+    opacity: 1;
+    transition: .2s linear;
+}
+  
+.btn-show-more:hover::after {
+    visibility: visible;
+    opacity: 0.7;
+    width: 90%;
+}
+  
+.btn-show-more:hover {
+    letter-spacing: 2px;
+    opacity: 1;
+}
+
+  
+@keyframes attention {
+    0% {
+      transform: translateX(0%);
+    }
+  
+    50% {
+      transform: translateX(30%);
+    }
+  
+}
+
+/* -------------------- MOTIVATION / BUTTONS -------------------- */
+
+.toggle-wrapper {
+    padding: 24px;
+    background-color: var(--darkblue);
+    color: var(--offwhite);
+    border-radius: 50%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+.bg-button {
+    height: 48px;
+    width: 250px;
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    color: var(--offwhite);
+    background-color: var(--darkblue);
+    border: 1px solid var(--offwhite);
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px var(--offwhite);
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.bg-button:hover {
+    background-color: var(--darkblue);
+    color: var(--offwhite);
+    border: 1px solid var(--hotpink);
+    box-shadow: 5px 5px 0px var(--hotpink);
+}
+
+.bg-button:active {
+    background-color: var(--hotpink);
+    box-shadow: none;
+    transform: translateY(4px);
+}
+
+body.alt-background {
+    background-image: none;
+    background-color: var(--offwhite);
+    color: var(--darkblue);
+}
+
+.subheading {
+    padding-left: 16px;
+}
+
+/* ---------- COMPANIES (Cards) ---------- */
+.company-card {
+    border: 1px solid var(--offwhite);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--darkblue);
+    color: var(--offwhite);
+    max-width: 480px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.link-company {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--offwhite);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.link-company:hover {
+    color: var(--pink);
+}
+
+.logo-friday {
+    background-color: var(--offwhite);
+    padding: 8px;
+    border-radius: 8px;
+    height: 48px;
+    width: auto;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--darkblue);
+}

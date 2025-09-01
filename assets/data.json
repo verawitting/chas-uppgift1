@@ -1,0 +1,60 @@
+{
+  "experience": [
+    {
+      "period": "2018-2023",
+      "role": "Barista and Shop Assistant",
+      "company": "AB Småland Lifestyle Concept",
+      "description": "Made some good coffee, provided customer service, and managed multiple tasks simultaneously. Developed teamwork, communication, and problem-solving skills in a fast-paced café and boutique environment, while learning about inventory and sales management.",
+      "icon": "/assets/icons/coffee.svg",
+      "iconAlt": "Icon of coffee mug"
+    },
+    {
+      "period": "2023-2024",
+      "role": "Web Development Bootcamp",
+      "company": "Technigo",
+      "description": "Completed an intensive fullstack development program, building real-world projects using modern web technologies like HTML, CSS, JavaScript, and React. Gained hands-on experience in coding, debugging, and collaborating with peers on project work, while strengthening problem-solving and logical thinking skills.",
+      "icon": "/assets/icons/book.svg",
+      "iconAlt": "Icon of book"
+    },
+    {
+      "period": "2020-2025",
+      "role": "Freelance Web Developement Graphic Design",
+      "company": "Various projects",
+      "description": "Designed and developed websites, branding, and visual content for a variety of clients. Combined technical development skills with creative design thinking to deliver cohesive digital experiences, while learning client communication, project management, and creative problem solving.",
+      "icon": "/assets/icons/coffee.svg",
+      "iconAlt": "Icon of coffee mug"
+    },
+    {
+      "period": "2024-NOW",
+      "role": "Social Team Volunteer",
+      "company": "Pink Programming",
+      "description": "Supported community events, workshops, and initiatives aimed at making tech more inclusive for women and non-binary people. Helping to create an encouraging environment for learning and networking in technology.",
+      "icon": "/assets/icons/coffee.svg",
+      "iconAlt": "Icon of coffee mug"
+    },
+    {
+      "period": "2024-2025",
+      "role": "Introduction to Java",
+      "company": "Luleå University",
+      "description": "Learned the fundamentals of Java programming, including object-oriented programming, data structures, and basic algorithms. Completed exercises and small projects to apply theory to practical programming problems.",
+      "icon": "/assets/icons/book.svg",
+      "iconAlt": "Icon of book"
+    },
+    {
+      "period": "2025-2025",
+      "role": "UX-designer",
+      "company": "Freelance for a start-up",
+      "description": "Designed and developed key features for FixMeApp, a web application for booking beauty appointments, integrating AI-powered functionalities. Conducted user research, created wireframes and prototypes, and implemented design solutions to enhance usability and user experience.",
+      "icon": "/assets/icons/coffee.svg",
+      "iconAlt": "Icon of coffee mug"
+    },
+    {
+      "period": "2025-2027",
+      "role": "Fullstack Java",
+      "company": "Chas Academy YH programme",
+      "description": "I'm so excited to start the journey at Chas Academy! Looking forward to getting to know my fellow students! :D",
+      "icon": "/assets/icons/book.svg",
+      "iconAlt": "Icon of book"
+    }
+  ]
+}
