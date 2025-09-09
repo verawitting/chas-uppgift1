@@ -28,7 +28,7 @@ body {
 /* -------------------- TYPOGRAPHY -------------------- */
 h1 {
     font-family: "Instrument Serif", serif;
-    font-size: clamp(112px, 20vw, 112px); /* huge min, grows with viewport */
+    font-size: clamp(112px, 20vw, 200px); /* huge min, grows with viewport */
     line-height: 0.7;
 }
 
@@ -94,6 +94,12 @@ section {
     gap: 24px;
 }
 
+@media only screen and (min-width: 700px) {
+    section:not(.hobbies) {
+    align-items: center;
+    }
+}
+
 /* ---------- HERO ---------- */
 
 .hero {
@@ -133,6 +139,25 @@ section {
 
 .vera-text {
     width: 50%;
+}
+
+@media only screen and (min-width: 700px) {
+    .vera-content {
+        flex-direction: row;
+        align-self: flex-end;
+        padding: 0 0 0 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .hero {
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    .heading-main {
+        align-self: flex start;
+    }
 }
 
 /* ---------- HOBBIES ---------- */
@@ -198,12 +223,30 @@ ul {
     justify-content: center;
 }
 
+@media only screen and (min-width: 566px) {
+    .hobbies-wrapper ul {
+        max-width: 550px;
+    }
+}
+
 /* ---------- EXPERIENCE ----------  */
 
 .experience-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+@media only screen and (min-width: 900px) {
+    .experience-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .exp-card {
+        width: 450px;
+    }
 }
 
 .exp-card {
@@ -213,6 +256,7 @@ ul {
     display: flex;
     align-items: flex-start;
     gap: 8px;
+    max-width: 500px;
 }
 
 .exp-card:hover {
@@ -304,17 +348,44 @@ ul {
   
 }
 
+@media only screen and (min-width: 450px) {
+    .exp-card {
+        justify-content: space-between;
+        text-align: right;
+        padding-right: 16px;
+    }
+}
+
 /* -------------------- MOTIVATION / BUTTONS -------------------- */
+/* indeed not great naming :s */
+.motivation-wrapper {
+    margin: 48px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 600px;
+    align-items: center;
+}
 
 .toggle-wrapper {
-    padding: 24px;
+    padding: 48px;
     background-color: var(--darkblue);
     color: var(--offwhite);
     border-radius: 50%;
     display: flex;
-    gap: 8px;
+    gap: 16px;
     align-items: center;
     text-align: center;
+}
+
+.toggle-wrapper h3 {
+    max-width: 190px; 
+}
+
+@media only screen and (min-width: 700px) {
+    .toggle-wrapper {
+        max-width: 500px;
+    }
 }
 
 .bg-button {
@@ -359,13 +430,30 @@ body.alt-background {
 }
 
 /* ---------- COMPANIES (Cards) ---------- */
+.companies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media only screen and (min-width: 700px) {
+    .companies-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .company-card {
+        max-width: 290px;
+    }
+}
+
 .company-card {
     border: 1px solid var(--offwhite);
     border-radius: 12px;
     padding: 24px;
     background: var(--darkblue);
     color: var(--offwhite);
-    max-width: 480px;
+    min-width: 200px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -390,12 +478,23 @@ body.alt-background {
     color: var(--pink);
 }
 
-.logo-friday {
+.logo-company {
     background-color: var(--offwhite);
     padding: 8px;
     border-radius: 8px;
     height: 48px;
     width: auto;
+}
+/* ---------- VIDEO ---------- */
+.video-wrapper {
+  width: 100%;  
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
 }
 
 /* -------------------- FOOTER -------------------- */
